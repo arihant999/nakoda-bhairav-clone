@@ -16,38 +16,58 @@
       height: 100%;
       border: none;
     }
-    #join-btn {
+    .btn {
       position: fixed;
-      top: 20px;
-      right: 20px;
       background-color: #007bff;
       color: white;
       border: none;
       border-radius: 8px;
-      padding: 12px 18px;
-      font-size: 16px;
+      padding: 10px 15px;
+      font-size: 14px;
       z-index: 9999;
       cursor: pointer;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     }
-    #join-btn:hover {
+    #join-btn-right {
+      top: 20px;
+      right: 20px;
+    }
+    #join-btn-left {
+      top: 20px;
+      left: 20px;
+    }
+    .btn:hover {
       background-color: #0056b3;
     }
   </style>
 </head>
 <body>
 
-  <!-- Button to join your Telegram -->
-  <button id="join-btn" onclick="window.open('https://t.me/MockManager', '_blank')">Join Now</button>
+  <!-- Join Buttons -->
+  <button class="btn" id="join-btn-left" onclick="window.open('https://t.me/+rc5Psv_S2VJkMGM1', '_blank')">Join TG</button>
+  <button class="btn" id="join-btn-right" onclick="window.open('https://t.me/MockManager', '_blank')">Contact Me</button>
 
-  <!-- Load original StudyUK.fun -->
-  <iframe src="https://studyuk.fun" id="mirror"></iframe>
+  <!-- Mirror -->
+  <iframe id="mirror" src="https://studyuk.fun"></iframe>
 
   <script>
     // Refresh every 60 seconds
     setInterval(() => {
       document.getElementById('mirror').src = 'https://studyuk.fun';
     }, 60000);
+
+    // Replace inner Telegram links when iframe loads
+    document.getElementById('mirror').onload = () => {
+      const iframe = document.getElementById('mirror').contentWindow;
+      try {
+        const links = iframe.document.querySelectorAll('a[href*="t.me"]');
+        links.forEach(link => {
+          link.href = "https://t.me/+rc5Psv_S2VJkMGM1";
+        });
+      } catch (err) {
+        console.log("Cross-origin content, direct link override blocked. Using overlay buttons instead.");
+      }
+    };
   </script>
 
 </body>
