@@ -3,83 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NAKODA BHAIRAV</title>
+  <title>NAKODA BHAIRAV – Explore Courses</title>
+  <link rel="icon" href="nakoda.jpg" />
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
+    body, html { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    header { background: #0b1c3f; color: white; padding: 15px; text-align: center; }
+    #hero-img { max-width: 100%; display: block; margin: auto; }
+    h1 { margin-top: 15px; font-size: 28px; }
+    .btn { display: inline-block; margin: 15px 10px; padding: 12px 24px;
+      background: #007bff; color: white; border: none; border-radius: 6px;
+      text-decoration: none; font-size: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .btn {
-      position: fixed;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 15px;
-      font-size: 14px;
-      z-index: 9999;
-      cursor: pointer;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-    }
-    #join-btn-right {
-      top: 20px;
-      right: 20px;
-    }
-    #join-btn-left {
-      top: 20px;
-      left: 20px;
-    }
-
-    .overlay-link {
-      position: fixed;
-      z-index: 9998;
-      top: 55%; /* adjust to match "Join Telegram" image position */
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 220px; /* Approx width of their button */
-      height: 60px;
-    }
-
-    .overlay-link a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      opacity: 0; /* invisible */
-    }
-
+    .btn:hover { background: #0056b3; }
+    .container { padding: 20px; }
+    footer { text-align: center; padding: 10px; font-size: 14px; color: #555; }
   </style>
 </head>
 <body>
+  <header>
+    <h1>NAKODA BHAIRAV</h1>
+  </header>
+  <!-- Hero image-->
+  <img id="hero-img" src="nakoda.jpg" alt="Nakoda Bhairav" />
 
-  <!-- Floating Top Buttons -->
-  <button class="btn" id="join-btn-left" onclick="window.open('https://t.me/+rc5Psv_S2VJkMGM1', '_blank')">Join TG</button>
-  <button class="btn" id="join-btn-right" onclick="window.open('https://t.me/MockManager', '_blank')">Contact Me</button>
-
-  <!-- Mirror -->
-  <iframe id="mirror" src="https://studyuk.fun"></iframe>
-
-  <!-- Overlay over "Join Telegram" image -->
-  <div class="overlay-link">
-    <a href="https://t.me/+rc5Psv_S2VJkMGM1" target="_blank"></a>
+  <div class="container">
+    <h1>Explore as:</h1>
+    <a href="/courses" class="btn">Courses</a>
+    <a href="/offline" class="btn">Offline Batches</a>
   </div>
 
   <script>
-    // Reload iframe every 60 seconds
-    setInterval(() => {
-      document.getElementById('mirror').src = 'https://studyuk.fun';
-    }, 60000);
+    // Auto-refresh entire page every 60s
+    setInterval(() => location.reload(), 60000);
   </script>
 
+  <footer>
+    <p>Contact: <a href="https://t.me/MockManager" target="_blank">@MockManager</a> | Join our Channel: <a href="https://t.me/+rc5Psv_S2VJkMGM1" target="_blank">Click here</a></p>
+  </footer>
 </body>
 </html>
- <!-- Overlay to block or redirect @SDV_BOTX -->
-<div class="overlay-link" style="top: 92%; left: 50%; width: 160px; height: 30px;">
-  <a href="https://t.me/+rc5Psv_S2VJkMGM1" target="_blank"></a>
-</div>
